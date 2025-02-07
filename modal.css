@@ -37,6 +37,9 @@ img {
 }
 
 .topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   overflow: hidden;
   margin: 3.5%;
 }
@@ -44,7 +47,9 @@ img {
     float: left;
 }
 .main-navbar {
-    float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .topnav a {
   float: left;
@@ -78,7 +83,9 @@ img {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -502,6 +509,19 @@ footer {
   color: #f00;
   font-size: 10px;
   display: none;
+}
+
+.close-modal-btn {
+  display: none;
+}
+
+.close-modal-content {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 @keyframes modalopen {

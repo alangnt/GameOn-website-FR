@@ -10,6 +10,8 @@ function editNav() {
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
+const modalContent = document.querySelector(".modal-content");
+const modalCloseBtn = document.querySelector(".close-modal-btn");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -27,7 +29,9 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
-function validateForm() {
+document.querySelector("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+  
   let isValid = true;
   
   // Reset the entire form
@@ -102,10 +106,17 @@ function validateForm() {
   }
   
   if (isValid) {
-    alert("Merci ! Votre réservation a été reçue.")
+    modalContent.innerHTML = "Merci pour votre inscription";
+    modalCloseBtn.classList.remove("close-modal-btn");
+    modalContent.classList.add("close-modal-content");
   }
   
   return isValid;
+});
+
+function closeValidatedModal() {
+  modalbg.style.display = "none";
+  window.location.reload();
 }
 
 
