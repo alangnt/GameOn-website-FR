@@ -1,5 +1,5 @@
 function editNav() {
-  var x = document.getElementById("myTopnav");
+  let x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
   } else {
@@ -10,7 +10,6 @@ function editNav() {
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -31,6 +30,12 @@ function closeModal() {
 function validateForm() {
   let isValid = true;
   
+  // Reset the entire form
+  document.querySelectorAll(".data-error").forEach((el) => {
+    el.innerHTML = "";
+    el.style.display = "none";
+  });
+  
   const formData = {
     firstName: document.getElementById("first").value.trim(),
     lastName: document.getElementById("last").value.trim(),
@@ -43,44 +48,61 @@ function validateForm() {
   
   // Name validation (at least 2 characters)
   if (formData.firstName.length < 2) {
-    alert("Votre prénom doit contenir au moins 2 caractères.");
+    let error = document.querySelector(".first-error");
+    error.innerHTML = "Votre prénom doit contenir au moins 2 caractères.";
+    error.style.display = "block";
     isValid = false;
   }
   if (formData.lastName.length < 2) {
-    alert("Votre nom doit contenir au moins 2 caractères.");
+    let error = document.querySelector(".last-error");
+    error.innerHTML = "Votre nom doit contenir au moins 2 caractères.";
+    error.style.display = "block";
     isValid = false;
   }
   
   // Email validation (basic regex check)
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(formData.email)) {
-    alert("Veuillez entrer une adresse email valide.");
+    let error = document.querySelector(".email-error");
+    error.innerHTML = "Veuillez entrer une adresse email valide.";
+    error.style.display = "block";
     isValid = false;
   }
   
-  // Birthdate validation (must be at least 13 years old)
-  if (formData.birthdate) {
-    const birthYear = new Date(formData.birthdate).getFullYear();
-    const currentYear = new Date().getFullYear();
-    if (currentYear - birthYear < 13) {
-      alert("Vous devez avoir au moins 13 ans pour vous inscrire.");
-      isValid = false;
-    }
-  } else {
-    alert("Veuillez entrer votre date de naissance.");
+  // Birthdate validation
+  if (!formData.birthdate) {
+    let error = document.querySelector(".birthdate-error");
+    error.innerHTML = "Veuillez entrer votre date de naissance.";
+    error.style.display = "block";
+    isValid = false;
+  }
+  
+  // Quantity validation
+  if (!formData.quantity || formData.quantity < 0 || formData.quantity > 99) {
+    let error = document.querySelector(".quantity-error");
+    error.innerHTML = "Veuillez entrer un nombre valide.";
+    error.style.display = "block";
     isValid = false;
   }
   
   // Tournament selection validation
   if (!formData.location) {
-    alert("Veuillez sélectionner un tournoi.");
+    let error = document.querySelector(".location-error");
+    error.innerHTML = "Veuillez sélectionner un tournoi";
+    error.style.display = "block";
     isValid = false;
   }
   
   // Terms and conditions validation
   if (!formData.terms) {
-    alert("Vous devez accepter les conditions d'utilisation.");
+    let error = document.querySelector(".terms-error");
+    error.innerHTML = "Vous devez accepter les conditions d'utilisation.";
+    error.style.display = "block";
     isValid = false;
+  }
+  
+  if (isValid) {
+    alert("Merci ! Votre réservation a été reçue.")
   }
   
   return isValid;
