@@ -21,7 +21,7 @@
 body {
   display: flex;
   flex-direction: column;
-  font-family: var(--font-default);
+  font-family: var(--font-default), sans-serif;
   font-size: 18px;
   max-width: 1300px;
   margin: 0 auto;
@@ -139,7 +139,7 @@ main {
 .footer {
   margin: 20px;
   padding: 10px;
-  font-family: var(--font-slab);
+  font-family: var(--font-slab), sans-serif;
 }
 
 /* Modal form */
@@ -194,7 +194,7 @@ main {
 }
 
 label {
-  font-family: var(--font-default);
+  font-family: var(--font-default), sans-serif;
   font-size: 17px;
   font-weight: normal;
   display: inline-block;
@@ -318,7 +318,7 @@ input {
 /* custom select styles */
 .custom-select {
   position: relative;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   font-size: 1.1rem;
   font-weight: normal;
 }
