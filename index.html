@@ -54,9 +54,8 @@
     <div class="content">
       <span class="close"></span>
       <div class="modal-body">
-        <!-- Wrap the form in a wrapper for better JS targeting -->
         <div class="modal-form-wrapper">
-          <form name="reserve" class="modal-content">
+          <form name="reserve" class="form-content">
             <div class="formData">
               <label for="first">Prénom</label><br />
               <input class="text-control" type="text" id="first" name="first" /><br />
@@ -128,7 +127,10 @@
           </form>
         </div>
         
-        <button class="btn-submit button close-modal-btn" onclick="closeValidatedModal()">Fermer</button>
+        <div class="div-hidden success-container">
+          <p class="success-message">Merci pour votre inscription !</p>
+          <button class="btn-submit button close-modal-btn" onclick="closeValidatedModal()">Fermer</button>
+        </div>
       </div>
     </div>
   </div>

@@ -529,8 +529,9 @@ footer {
 
 [class$="-error"] {
   color: #f00;
-  font-size: 10px;
+  font-size: 14px;
   display: none;
+  margin-top: 4px;
 }
 
 .close-modal-btn {
@@ -544,6 +545,32 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 8px;
+}
+
+.form-hidden {
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.div-hidden {
+  display: none;
+}
+
+.show-success-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
 }
 
 @keyframes modalopen {
