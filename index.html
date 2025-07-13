@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Metadata and page setup -->
+  <!-- Meta information -->
   <meta charset="utf-8" />
   <title>Reservation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -9,19 +9,30 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   
-  <!-- Custom CSS and external libraries -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="modal.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
+  
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  
+  <!-- Google Fonts: DM Sans -->
+  <link
+    href="https://fonts.googleapis.com/css?family=DM+Sans"
+    rel="stylesheet"
+  />
 </head>
 <body>
 
-<!-- Navigation Header -->
+<!-- Header with logo and navigation -->
 <header class="topnav" id="myTopnav">
   <div class="header-logo">
     <img alt="logo" src="assets/Logo.png" />
   </div>
   
+  <!-- Main navigation bar -->
   <nav id="main-navbar">
     <ul>
       <li><a href="#">Détails de l'événement</a></li>
@@ -29,13 +40,14 @@
       <li><a href="#">Contact</a></li>
       <li><a href="#">&Eacute;vénements passés</a></li>
     </ul>
-    <!-- Hamburger menu for mobile view -->
+    
+    <!-- Hamburger icon (shown on small screens) -->
     <i class="fa fa-bars" id="hamburger-icon"></i>
   </nav>
 </header>
 
 <main>
-  <!-- Hero section with image and signup button -->
+  <!-- Hero section: title, description, image, and button -->
   <div class="hero-section">
     <div class="hero-content">
       <h1 class="hero-headline">
@@ -46,67 +58,71 @@
         Vous aimez jouer ? Notre prochain évènement gaming est ouvert
         aux réservations... Places limitées !
       </p>
-      <!-- Signup button triggers modal -->
+      
+      <!-- Button to trigger modal -->
       <button class="btn-signup modal-btn">je m'inscris</button>
     </div>
     
+    <!-- Hero image -->
     <div class="hero-img">
       <img src="assets/bg_img.jpg" alt="img" />
     </div>
     
-    <!-- Duplicate signup button (can be removed or hidden on small screens) -->
+    <!-- Duplicate signup button (for responsive layout) -->
     <button class="btn-signup modal-btn">je m'inscris</button>
   </div>
   
-  <!-- MODAL section (hidden by default) -->
+  <!-- MODAL form -->
   <div class="bground">
     <div class="content">
-      <!-- Close icon -->
+      
+      <!-- Close icon for modal -->
       <span class="close"></span>
       
       <div class="modal-body">
-        <!-- Form wrapper -->
         <div class="modal-form-wrapper">
+          
+          <!-- Reservation form -->
           <form name="reserve" class="form-content">
-            <!-- First Name -->
+            <!-- First name input -->
             <div class="formData">
               <label for="first">Prénom</label><br />
               <input class="text-control" type="text" id="first" name="first" /><br />
               <span class="first-error data-error"></span><br />
             </div>
             
-            <!-- Last Name -->
+            <!-- Last name input -->
             <div class="formData">
               <label for="last">Nom</label><br />
               <input class="text-control" type="text" id="last" name="last" /><br />
               <span class="last-error data-error"></span><br />
             </div>
             
-            <!-- Email -->
+            <!-- Email input -->
             <div class="formData">
               <label for="email">E-mail</label><br />
               <input class="text-control" type="email" id="email" name="email" /><br />
               <span class="email-error data-error"></span><br />
             </div>
             
-            <!-- Birthdate -->
+            <!-- Birthdate input -->
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br />
               <input class="text-control" type="date" id="birthdate" name="birthdate" /><br />
               <span class="birthdate-error data-error"></span><br />
             </div>
             
-            <!-- Tournament count -->
+            <!-- Number of past events attended -->
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br />
               <input type="number" class="text-control" id="quantity" name="quantity" /><br />
               <span class="quantity-error data-error"></span>
             </div>
             
-            <!-- Tournament location selection -->
+            <!-- Event location selection -->
             <p class="text-label">À quel tournoi souhaitez-vous participer cette année ?</p>
             <div class="formData">
-              <!-- Each radio corresponds to a city -->
+              <!-- Radio buttons for location choices -->
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1"><span class="checkbox-icon"></span>New York</label>
               
@@ -127,7 +143,7 @@
               <span class="location-error data-error"></span><br />
             </div>
             
-            <!-- Terms and subscription checkboxes -->
+            <!-- Terms and marketing opt-in checkboxes -->
             <div class="formData">
               <input class="checkbox-input" type="checkbox" id="checkbox1" />
               <label class="checkbox2-label" for="checkbox1">
@@ -148,7 +164,7 @@
           </form>
         </div>
         
-        <!-- Success message (hidden by default) -->
+        <!-- Success message displayed after form submission -->
         <div class="div-hidden success-container">
           <p class="success-message">Merci pour votre inscription !</p>
           <button class="btn-submit button close-modal-btn" onclick="closeValidatedModal()">Fermer</button>
@@ -163,7 +179,7 @@
   <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
 </footer>
 
-<!-- Modal JavaScript logic -->
+<!-- Modal JavaScript -->
 <script src="modal.js"></script>
 </body>
 </html>
