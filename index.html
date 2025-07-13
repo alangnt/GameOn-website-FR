@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Metadata and page setup -->
   <meta charset="utf-8" />
   <title>Reservation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  
+  <!-- Custom CSS and external libraries -->
   <link rel="stylesheet" href="modal.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
-  <link
-    href="https://fonts.googleapis.com/css?family=DM+Sans"
-    rel="stylesheet"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
 </head>
 <body>
+
+<!-- Navigation Header -->
 <header class="topnav" id="myTopnav">
   <div class="header-logo">
     <img alt="logo" src="assets/Logo.png" />
   </div>
+  
   <nav id="main-navbar">
     <ul>
       <li><a href="#">Détails de l'événement</a></li>
@@ -27,11 +29,13 @@
       <li><a href="#">Contact</a></li>
       <li><a href="#">&Eacute;vénements passés</a></li>
     </ul>
+    <!-- Hamburger menu for mobile view -->
     <i class="fa fa-bars" id="hamburger-icon"></i>
   </nav>
 </header>
 
 <main>
+  <!-- Hero section with image and signup button -->
   <div class="hero-section">
     <div class="hero-content">
       <h1 class="hero-headline">
@@ -42,53 +46,67 @@
         Vous aimez jouer ? Notre prochain évènement gaming est ouvert
         aux réservations... Places limitées !
       </p>
+      <!-- Signup button triggers modal -->
       <button class="btn-signup modal-btn">je m'inscris</button>
     </div>
+    
     <div class="hero-img">
       <img src="assets/bg_img.jpg" alt="img" />
     </div>
+    
+    <!-- Duplicate signup button (can be removed or hidden on small screens) -->
     <button class="btn-signup modal-btn">je m'inscris</button>
   </div>
   
-  <!-- MODAL -->
+  <!-- MODAL section (hidden by default) -->
   <div class="bground">
     <div class="content">
+      <!-- Close icon -->
       <span class="close"></span>
+      
       <div class="modal-body">
+        <!-- Form wrapper -->
         <div class="modal-form-wrapper">
           <form name="reserve" class="form-content">
+            <!-- First Name -->
             <div class="formData">
               <label for="first">Prénom</label><br />
               <input class="text-control" type="text" id="first" name="first" /><br />
               <span class="first-error data-error"></span><br />
             </div>
             
+            <!-- Last Name -->
             <div class="formData">
               <label for="last">Nom</label><br />
               <input class="text-control" type="text" id="last" name="last" /><br />
               <span class="last-error data-error"></span><br />
             </div>
             
+            <!-- Email -->
             <div class="formData">
               <label for="email">E-mail</label><br />
               <input class="text-control" type="email" id="email" name="email" /><br />
               <span class="email-error data-error"></span><br />
             </div>
             
+            <!-- Birthdate -->
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br />
               <input class="text-control" type="date" id="birthdate" name="birthdate" /><br />
               <span class="birthdate-error data-error"></span><br />
             </div>
             
+            <!-- Tournament count -->
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br />
               <input type="number" class="text-control" id="quantity" name="quantity" /><br />
               <span class="quantity-error data-error"></span>
             </div>
             
+            <!-- Tournament location selection -->
             <p class="text-label">À quel tournoi souhaitez-vous participer cette année ?</p>
             <div class="formData">
+              <!-- Each radio corresponds to a city -->
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1"><span class="checkbox-icon"></span>New York</label>
               
@@ -109,6 +127,7 @@
               <span class="location-error data-error"></span><br />
             </div>
             
+            <!-- Terms and subscription checkboxes -->
             <div class="formData">
               <input class="checkbox-input" type="checkbox" id="checkbox1" />
               <label class="checkbox2-label" for="checkbox1">
@@ -124,10 +143,12 @@
               </label><br />
             </div>
             
+            <!-- Submit button -->
             <input class="btn-submit button" type="submit" value="C'est parti" />
           </form>
         </div>
         
+        <!-- Success message (hidden by default) -->
         <div class="div-hidden success-container">
           <p class="success-message">Merci pour votre inscription !</p>
           <button class="btn-submit button close-modal-btn" onclick="closeValidatedModal()">Fermer</button>
@@ -137,10 +158,12 @@
   </div>
 </main>
 
+<!-- Footer -->
 <footer>
   <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
 </footer>
 
+<!-- Modal JavaScript logic -->
 <script src="modal.js"></script>
 </body>
 </html>
